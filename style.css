@@ -1,0 +1,144 @@
+/* Shared design system — simple, clean, slightly retro, pixel-flavored */
+
+:root {
+  --bg: #f4efe2;
+  --paper: #fffdf8;
+  --ink: #1c1c1c;
+  --ink-soft: #6b6656;
+  --accent: #e0a52c;
+  --accent-dark: #b9841f;
+  --header-bg: #22283a;
+  --header-ink: #f4efe2;
+
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-mono: 'VT323', 'Courier New', monospace;
+  --font-body: 'Segoe UI', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  background-image: radial-gradient(rgba(28, 28, 28, 0.07) 1px, transparent 1px);
+  background-size: 15px 15px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--header-bg);
+  color: var(--header-ink);
+  padding: 44px 20px;
+  text-align: center;
+  border-bottom: 4px solid var(--accent);
+}
+
+header h1 {
+  font-family: var(--font-pixel);
+  font-size: clamp(1.1rem, 4.5vw, 1.8rem);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+header p {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 1.4em;
+  letter-spacing: 0.02em;
+}
+
+.blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+header a.btn-pixel {
+  margin-top: 20px;
+}
+
+main {
+  max-width: 1000px;
+  margin: 44px auto;
+  padding: 0 20px;
+}
+
+section {
+  background-color: var(--paper);
+  padding: 26px 30px;
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  margin-bottom: 36px;
+}
+
+section h2 {
+  font-family: var(--font-pixel);
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 26px 20px;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 1.15em;
+}
+
+/* Reusable pixel button: solid border + hard offset shadow that "presses in" */
+.btn-pixel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-pixel);
+  font-size: 0.68em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  padding: 10px 16px;
+  box-shadow: 4px 4px 0 var(--ink);
+  cursor: pointer;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+
+.btn-pixel:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.btn-pixel:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+header .btn-pixel {
+  color: var(--header-ink);
+  background: transparent;
+  border-color: var(--accent);
+  box-shadow: 4px 4px 0 var(--accent);
+}
+
+header .btn-pixel:hover {
+  box-shadow: 6px 6px 0 var(--accent);
+}
+
+header .btn-pixel:active {
+  box-shadow: 1px 1px 0 var(--accent);
+}

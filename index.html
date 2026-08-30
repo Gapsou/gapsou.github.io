@@ -4,64 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gaspard Houot - Gapsou</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    .project-link {
+      display: block;
+      padding: 16px 20px;
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      box-shadow: 5px 5px 0 var(--ink);
+      text-decoration: none;
+      color: var(--ink);
+      transition: transform 0.08s, box-shadow 0.08s;
     }
 
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #222;
-      line-height: 1.6;
+    .project-link:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 var(--ink);
     }
 
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
+    .project-link:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 var(--ink);
     }
 
-    header h1 {
-      font-size: 2.2em;
-      margin-bottom: 5px;
+    .project-link strong {
+      font-family: var(--font-pixel);
+      font-size: 0.8em;
+      color: var(--accent-dark);
+      display: block;
+      margin-bottom: 10px;
+      line-height: 1.5;
     }
 
-    header p {
-      color: #bdc3c7;
-      font-size: 1.1em;
-    }
-
-    main {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    section {
-      background-color: white;
-      padding: 25px 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
-    }
-
-    section h2 {
-      margin-bottom: 15px;
-      color: #2c3e50;
-      border-bottom: 2px solid #2c3e50;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      font-size: 0.9em;
+    .project-link span {
+      font-size: 0.95em;
+      color: var(--ink-soft);
     }
   </style>
 </head>
@@ -69,7 +49,7 @@
 
   <header>
     <h1>Gaspard Houot</h1>
-    <p>alias Gapsou</p>
+    <p>alias Gapsou<span class="blink">_</span></p>
   </header>
 
   <main>
@@ -81,6 +61,14 @@
         pour m'entraîner, partager mes projets et présenter mon CV. N'hésitez
         pas à jeter un œil autour !
       </p>
+    </section>
+
+    <section>
+      <h2>Projets</h2>
+      <a class="project-link" href="oscilloscope.html">
+        <strong>Générateur de signal</strong>
+        <span>Oscilloscope virtuel avec formes d'onde, modulations AM/FM/ASK/FSK/BPSK, spectrogramme et sortie audio réglables.</span>
+      </a>
     </section>
   </main>
 
